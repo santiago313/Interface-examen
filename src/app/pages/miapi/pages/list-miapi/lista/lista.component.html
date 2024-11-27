@@ -1,0 +1,44 @@
+<h1 class="text-center mb-4">Lista de Autos</h1>
+
+<button class="btn btn-primary" type="button" (click)="openModal()">Agregar Auto</button>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Fecha de Creación</th>
+                <th>Precio</th>
+                <th>Kilometraje</th>
+                <th>Color</th>
+                <th>Número de Puertas</th>
+                <th>Ubicación</th>
+                <th>Descripción</th>
+                <th>Botones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let autos of autosAll?.autos">
+                <td>{{autos._id}}</td>
+                <td>{{autos.marca}}</td>
+                <td>{{autos.modelo}}</td>
+                <td>{{autos.fechaCreacion}}</td>
+                <td>${{autos.precio}}</td>
+                <td>{{autos.kilometraje}} km</td>
+                <td>{{autos.color}}</td>
+                <td>{{autos.numeroPuertas}}</td>
+                <td>{{autos.ubicacion}}</td>
+                <td>{{autos.descripcion}}</td>
+                <td>
+                    <button type="button" class="btn btn-success col-4 me-1" (click)="openEdit(autos)"><i class="bi bi-pen"></i></button>
+                    <button type="button" class="btn btn-danger col-4" (click)="eliminarElemento(autos._id!)"><i class="bi bi-x-square"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-modal-principal></app-modal-principal>
+<app-modal-actualizar></app-modal-actualizar>

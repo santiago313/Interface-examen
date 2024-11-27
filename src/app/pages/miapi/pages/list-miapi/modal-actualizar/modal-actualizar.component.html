@@ -1,0 +1,63 @@
+<div class="modal fade" #editModalElement tabindex="-1" aria-labelledby="editAutoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <!-- Encabezado del modal -->
+            <div class="modal-header">
+                <h1>Editar Auto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Cuerpo del modal -->
+            <div class="modal-body">
+
+                <label for="editMarca" class="form-label">Marca</label>
+                <input type="text" id="editMarca" class="form-control" #editMarca [value]="selectedAuto?.marca">
+
+                <label for="editModelo" class="form-label">Modelo</label>
+                <input type="text" id="editModelo" class="form-control" #editModelo [value]="selectedAuto?.modelo">
+
+                <label for="editFechaCreacion" class="form-label">Fecha de Creación</label>
+                <input type="number" id="editFechaCreacion" class="form-control" #editFechaCreacion [value]="selectedAuto?.fechaCreacion">
+
+                <label for="editPrecio" class="form-label">Precio</label>
+                <input type="number" id="editPrecio" class="form-control" #editPrecio [value]="selectedAuto?.precio">
+
+                <label for="editKilometraje" class="form-label">Kilometraje</label>
+                <input type="number" id="editKilometraje" class="form-control" #editKilometraje [value]="selectedAuto?.kilometraje">
+
+                <label for="editColor" class="form-label">Color</label>
+                <input type="text" id="editColor" class="form-control" #editColor [value]="selectedAuto?.color">
+
+                <label for="editNumeroPuertas" class="form-label">Número de Puertas</label>
+                <input type="number" id="editNumeroPuertas" class="form-control" #editNumeroPuertas [value]="selectedAuto?.numeroPuertas">
+
+                <label for="editUbicacion" class="form-label">Ubicación</label>
+                <input type="text" id="editUbicacion" class="form-control" #editUbicacion [value]="selectedAuto?.ubicacion">
+
+                <label for="editDescripcion" class="form-label">Descripción</label>
+                <textarea id="editDescripcion" class="form-control" #editDescripcion rows="3">{{selectedAuto?.descripcion}}</textarea>
+            </div>
+
+            <!-- Pie del modal -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button"
+                        class="btn btn-success"
+                        (click)="Editar(
+                            selectedAuto?._id!,
+                            editMarca.value,
+                            editModelo.value,
+                            editFechaCreacion.value,
+                            editPrecio.value,
+                            editKilometraje.value,
+                            editColor.value,
+                            editNumeroPuertas.value,
+                            editUbicacion.value,
+                            editDescripcion.value
+                        )">
+                    Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

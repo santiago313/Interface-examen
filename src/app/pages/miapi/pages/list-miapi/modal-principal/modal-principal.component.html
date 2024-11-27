@@ -1,0 +1,62 @@
+<div class="modal fade" #modalElement tabindex="-1" aria-labelledby="autoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <!-- Encabezado del modal -->
+            <div class="modal-header">
+                <h1>Agregar Auto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Cuerpo del modal -->
+            <div class="modal-body">
+
+                <label for="marca" class="form-label">Marca</label>
+                <input type="text" id="marca" class="form-control" #marca>
+
+                <label for="modelo" class="form-label">Modelo</label>
+                <input type="text" id="modelo" class="form-control" #modelo>
+
+                <label for="fechaCreacion" class="form-label">Fecha de Creación</label>
+                <input type="number" id="fechaCreacion" class="form-control" #fechaCreacion>
+
+                <label for="precio" class="form-label">Precio</label>
+                <input type="number" id="precio" class="form-control" #precio>
+
+                <label for="kilometraje" class="form-label">Kilometraje</label>
+                <input type="number" id="kilometraje" class="form-control" #kilometraje>
+
+                <label for="color" class="form-label">Color</label>
+                <input type="text" id="color" class="form-control" #color>
+
+                <label for="numeroPuertas" class="form-label">Número de Puertas</label>
+                <input type="number" id="numeroPuertas" class="form-control" #numeroPuertas>
+
+                <label for="ubicacion" class="form-label">Ubicación</label>
+                <input type="text" id="ubicacion" class="form-control" #ubicacion>
+
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea id="descripcion" class="form-control" #descripcion rows="3"></textarea>
+            </div>
+
+            <!-- Pie del modal -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button"
+                        class="btn btn-success"
+                        (click)="Agregar(
+                            marca.value,
+                            modelo.value,
+                            fechaCreacion.value,
+                            precio.value,
+                            kilometraje.value,
+                            color.value,
+                            numeroPuertas.value,
+                            ubicacion.value,
+                            descripcion.value
+                        )">
+                    Agregar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+tbody {
+    font-size: 0.85rem; 
+}
+
+button{
+    width: 50px;
+}
+
+.btn-primary{
+    width: 100%;
+    text-align: center;
+}
